@@ -1,0 +1,21 @@
+.box-a {
+  /*display: inline-block;*/
+  background-color: plum;
+  border: 2px solid red;
+  float: left;
+}
+
+.box-b {
+  /*display: inline-block;*/
+  float: left;
+  padding: 10px;
+
+  width: 200px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  background-color: linen;
+}
+
+img {
+  float: left;
+}

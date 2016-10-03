@@ -1,0 +1,31 @@
+body {
+  background-color: plum;
+}
+
+#main-heading {
+  text-align: center;
+}
+
+.warning {
+  color: lime;
+}
+
+.desire {
+  font-size: 100%;
+}
+
+em.desire {
+  font-size: 400%;
+}
+
+/*descendant*/
+article p {
+
+}
+
+/*direct child*/
+article > p {
+  background-color: white;
+}
+
+
