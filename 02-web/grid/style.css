@@ -1,0 +1,42 @@
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.span-1, .span-2, .span-3 {
+  min-height: 100px; 
+  float: left;
+  margin-right: 3.33333%; /* 20 / 600 = 0.033333 */
+}
+
+.span-1 {
+  width: 30%; /* 180 / 600 = 0.3 */
+  background-color: mistyrose;
+}
+
+.span-2 {
+  width: 63.333333%; /* 380 / 600 = 0.63333333 */
+  background-color: linen;
+}
+
+.span-3 {
+  width: 96.666666%; /* 580 / 600 = 0.96666666 */
+  background-color: plum;
+}
+
+img {
+  width: 100%;
+}
+
+@media (max-width: 50em) {
+
+  body {
+    width: 100%;
+  }
+
+  .span-1, .span-2, .span-3 {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
