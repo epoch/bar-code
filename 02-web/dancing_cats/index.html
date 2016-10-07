@@ -14,20 +14,7 @@
   <img style="position:absolute; left: 0px; top: 80px;" src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
 
   <script>
-var movePixels = 10;
-var delayMs = 50;
-var catTimer = null;
-function catWalk() {
-  var img = document.getElementsByTagName('img')[0];
-  var currentLeft = parseInt(img.style.left);
-  img.style.left = (currentLeft + movePixels) + 'px';
-  if (currentLeft > (window.innerWidth-img.width)) {
-    img.style.left = '0px';
-  }
-}
-function startCatWalk() {
-  catTimer = window.setInterval(catWalk, delayMs);
-}
+
   </script>
 
   <article>
@@ -40,5 +27,6 @@ function startCatWalk() {
 <p>BONUS: When the cat reaches half way, have her stop and replace the image with a dancing cat gif for a moment, then resume.
   </article>
 
+  <script src="app.js"></script>
  </body>
 </html>
