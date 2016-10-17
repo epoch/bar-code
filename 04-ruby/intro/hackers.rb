@@ -1,6 +1,7 @@
 require 'pry'
 require 'fileutils'
 
+puts 'enter a list of hackers:'
 hackers = gets.chomp.split(',')
 
 # get the list of hackers from the user gets
