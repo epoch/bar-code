@@ -14,15 +14,19 @@
     <hr>
   <% end %>
 
-  <form action="/checkin">
+  <form action="/checkin" method="post">
     <p>
       <label for="">name</label>
-      <input type="text">
+      <input name="name" type="text">
+    </p>
+    <p>
+      <label for="">email</label>
+      <input name="email" type="text">
     </p>
 
     <p>
       <label for="">comment</label>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <textarea name="comment" id="" cols="30" rows="10"></textarea>
     </p>
     <button>post</button>
   </form>
