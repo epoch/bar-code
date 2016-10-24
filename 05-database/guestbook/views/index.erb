@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>my guestbook</h1>
+
+  <% @guests.each do |guest| %>
+    <h2><%= guest['name'] %></h2>
+    <p><%= guest['comment'] %></p>
+    <hr>
+  <% end %>
+
+  <form action="/checkin">
+    <p>
+      <label for="">name</label>
+      <input type="text">
+    </p>
+
+    <p>
+      <label for="">comment</label>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </p>
+    <button>post</button>
+  </form>
+  
+</body>
+</html>
