@@ -1,6 +1,6 @@
 <h2>edit dish</h2>
 
-<form action="/dishes" method="post">
+<form action="/dishes/<%= @dish['id'] %>" method="post">
   <label for="">dish name</label>
   <input name="name" type="text" value="<%= @dish['name'] %>">
 

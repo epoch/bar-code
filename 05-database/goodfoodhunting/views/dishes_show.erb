@@ -6,3 +6,7 @@
 
 
 <a href="/dishes/<%= @dish['id'] %>/edit">edit</a>
+
+<form action="/dishes/<%= @dish['id']%>/delete" method="post">
+  <button>delete</button>
+</form>

@@ -52,9 +52,20 @@ end
 
 # updating an existing dish
 post '/dishes/:id' do
-  # sql statement to update an existing dish
+  params.inspect
 
-  
+  # update dishes set name = 'new name', image_url = '' where id = 7;
+
+  run_sql("UPDATE dishes SET name = '#{ params[:name] }', image_url = '#{ params[:image_url] }' WHERE id = #{ params[:id] };")
+
+  redirect to "/dishes/#{ params[:id] }"
 end
+
+post '/dishes/:id/delete' do
+  run_sql("DELETE FROM dishes WHERE id = #{ params[:id] };")
+  redirect to '/'
+end
+
+
 
 
