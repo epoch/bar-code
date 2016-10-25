@@ -1,0 +1,10 @@
+<h2>edit dish</h2>
+
+<form action="/dishes" method="post">
+  <label for="">dish name</label>
+  <input name="name" type="text" value="<%= @dish['name'] %>">
+
+  <label for="">image url</label>
+  <textarea name="image_url" id="" cols="30" rows="10"><%= @dish['image_url'] %></textarea>
+  <button>save</button>
+</form>

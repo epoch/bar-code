@@ -1,0 +1,6 @@
+<h2>all dishes</h2>
+
+<% @dishes.each do |dish| %>
+  <p><a href="/dishes/<%= dish['id'] %>"><%= dish['name'] %></a></p>
+  <img src="<%= dish['image_url'] %>" alt="">
+<% end %>
