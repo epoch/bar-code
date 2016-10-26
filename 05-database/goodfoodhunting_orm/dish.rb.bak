@@ -1,0 +1,49 @@
+require 'pry'
+require 'pg'
+
+class Dish
+
+  attr_accessor :name, :image_url
+
+  def initialize(name, image_url)
+    @name = name
+    @image_url = image_url
+  end
+
+  # # getter
+  # def name
+  #   @name
+  # end
+
+  # # setter
+  # def name=(name)
+  #   @name = name
+  # end
+
+  def valid_name?
+    name.length > 3
+  end
+
+  def image_url
+    @image_url
+  end
+
+  def save
+    return false unless valid_name?
+    # use the correct sql statement to add a new dish record to the database
+    db = PG.connect(dbname: 'goodfoodhunting')
+    db.exec("insert into dishes (name, image_url) values ('#{name}', '#{image_url}');")
+    db.close
+  end
+
+  def self.find(id)
+    db = PG.connect(dbname: 'goodfoodhunting')
+    result = db.exec("select * from dishes where id = #{id};")[0]
+    db.close
+    return result
+    # return Dish.new(result['name'], result['image_url'])    
+  end
+
+end
+
+binding.pry
