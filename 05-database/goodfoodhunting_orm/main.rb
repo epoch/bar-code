@@ -4,6 +4,8 @@ require 'pry'
 require_relative 'db_config'
 require_relative 'models/dish'
 require_relative 'models/comment'
+require_relative 'models/dish_type'
+
 
 get '/' do
   @dishes = Dish.all
@@ -11,6 +13,7 @@ get '/' do
 end
 
 get '/dishes/new' do
+  @dish_types = DishType.all
   erb :dishes_new
 end 
 
@@ -26,6 +29,7 @@ post '/dishes' do
   dish = Dish.new
   dish.name = params[:name]
   dish.image_url = params[:image_url]
+  dish.dish_type = params[:dish_type]
 
   if dish.save
     redirect to '/'

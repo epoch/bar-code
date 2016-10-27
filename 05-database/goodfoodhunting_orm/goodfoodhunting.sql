@@ -15,3 +15,10 @@ CREATE TABLE comments (
   dish_id INTEGER
 );
 
+ALTER TABLE dishes ADD dish_type VARCHAR(100);
+
+CREATE TABLE dish_types (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);
+

@@ -1,7 +1,17 @@
 <form action="/dishes" method="post">
   
+  <label for="">name</label>
   <input name="name" type="text">
+
+  <label for="">image_url</label>
   <textarea name="image_url" id="" cols="30" rows="10"></textarea>
+
+  <label for="">dish type</label>
+  <select name="dish_type" id="">
+    <% @dish_types.each do |dish_type| %>
+    <option value="<%= dish_type.name %>"><%= dish_type.name %></option>
+    <% end %>
+  </select>
 
   <button>create</button>
 
