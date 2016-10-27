@@ -29,7 +29,7 @@ post '/dishes' do
   dish = Dish.new
   dish.name = params[:name]
   dish.image_url = params[:image_url]
-  dish.dish_type = params[:dish_type]
+  dish.dish_type_id = params[:dish_type_id]
 
   if dish.save
     redirect to '/'

@@ -7,9 +7,9 @@
   <textarea name="image_url" id="" cols="30" rows="10"></textarea>
 
   <label for="">dish type</label>
-  <select name="dish_type" id="">
+  <select name="dish_type_id" id="">
     <% @dish_types.each do |dish_type| %>
-    <option value="<%= dish_type.name %>"><%= dish_type.name %></option>
+    <option value="<%= dish_type.id %>"><%= dish_type.name %></option>
     <% end %>
   </select>
 

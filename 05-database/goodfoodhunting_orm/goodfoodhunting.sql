@@ -22,3 +22,5 @@ CREATE TABLE dish_types (
   name VARCHAR(100) NOT NULL
 );
 
+ALTER TABLE dishes ADD dish_type_id INTEGER;
+
