@@ -1,0 +1,13 @@
+<h2><%= @dish.name %></h2>
+<img src="<%= @dish.image_url %>" alt="">
+
+
+<% @comments.each do |comment| %>
+  <p><%= comment.body %></p>
+<% end %>
+
+<form action="/comments" method="post">
+  <input type="hidden" name="dish_id" value="<%= @dish.id %>">
+  <textarea name="body" id="" cols="30" rows="10"></textarea>
+  <button>post comment</button>
+</form>

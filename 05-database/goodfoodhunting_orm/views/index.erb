@@ -1,6 +1,12 @@
 
+<a href="/dishes/new">new dish</a>
+
 <% @dishes.each do |dish| %>
 
-  <h2><%= dish.name %></h2>
+  <h2>
+    <a href="/dishes/<%= dish.id %>">
+      <%= dish.name %>
+    </a>
+  </h2>
 
 <% end %>
