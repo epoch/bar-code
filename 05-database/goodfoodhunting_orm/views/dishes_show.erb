@@ -1,8 +1,10 @@
 <h2><%= @dish.name %></h2>
 
+<a href="/dishes/<%= @dish.id %>/edit">edit dish</a>
+
 <h3>dish type: <%= @dish.dish_type_id %></h3>
 <%#= DishType.find(@dish.dish_type_id).name %>
-<%= @dish.dish_type.name %>
+<%= @dish.dish_type.name if @dish.dish_type %>
 
 
 <hr>

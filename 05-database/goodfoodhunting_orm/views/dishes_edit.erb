@@ -1,0 +1,25 @@
+<form action="/dishes/<%= @dish.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  
+  <label for="">name</label>
+  <input name="name" type="text" value="<%= @dish.name %>">
+
+  <label for="">image_url</label>
+  <textarea name="image_url" id="" cols="30" rows="10"><%= @dish.image_url %></textarea>
+
+  <label for="">dish type</label>
+  <select name="dish_type_id" id="">
+    <% @dish_types.each do |dish_type| %>
+
+    <% if @dish.dish_type_id == dish_type.id %>
+    <option selected value="<%= dish_type.id %>"><%= dish_type.name %></option>
+    <% else %>
+    <option value="<%= dish_type.id %>"><%= dish_type.name %></option>
+    <% end %>
+
+    <% end %>
+  </select>
+
+  <button>update</button>
+
+</form>

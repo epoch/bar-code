@@ -22,12 +22,16 @@ helpers do
 end
 
 get '/' do
-  @dishes = Dish.all
+  if params[:dish_type_id]
+    @dishes = Dish.where(dish_type_id: params[:dish_type_id])
+  else
+    @dishes = Dish.all
+  end
   erb :index
 end
 
 get '/dishes/new' do
-  redirect to '/session/new' if !logged_in?
+  # redirect to '/session/new' if !logged_in?
 
   @dish_types = DishType.all
   erb :dishes_new
@@ -38,6 +42,12 @@ get '/dishes/:id' do
   # @comments = @dish.comments
   @comments = Comment.where(dish_id: @dish.id)
   erb :dishes_show
+end
+
+get '/dishes/:id/edit' do
+  @dish = Dish.find(params[:id])
+  @dish_types = DishType.all
+  erb :dishes_edit
 end
 
 
