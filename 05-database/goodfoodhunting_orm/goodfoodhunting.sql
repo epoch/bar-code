@@ -24,3 +24,13 @@ CREATE TABLE dish_types (
 
 ALTER TABLE dishes ADD dish_type_id INTEGER;
 
+ALTER TABLE dishes DROP COLUMN dish_type;
+
+CREATE TABLE users (
+  id SERIAL4 PRIMARY KEY,
+  email VARCHAR(300), 
+  password_digest VARCHAR(400)
+);
+
+
+
