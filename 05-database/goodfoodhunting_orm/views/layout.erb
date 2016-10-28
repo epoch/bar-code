@@ -11,6 +11,23 @@
 </head>
 <body>
   <h1>goodfoodhunting</h1>
+  session: <%= session[:user_id] %>
+
+
+  <% if logged_in? %>
+
+  logged in as <%= User.find(session[:user_id]).email %>
+
+  <form action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">  
+    <button>logout</button>
+  </form>  
+
+  <% else %>
+
+    <a href="/session/new">login</a>
+
+  <% end %>
 
   <%= yield %>
 </body>
