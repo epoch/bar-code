@@ -1,0 +1,11 @@
+<form action="/dishes" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="">Title</label>
+  <input name="title" type="text">
+  
+  <label for="">Image URL</label>
+  <input name="image_url" type="text">
+
+  <button>create</button>
+</form>
