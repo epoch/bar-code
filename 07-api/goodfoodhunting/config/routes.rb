@@ -18,4 +18,10 @@ Rails.application.routes.draw do
   resources :users
 
   get '/donate', to: 'pages#donate'
+
+  get '/login', to: 'session#new'
+  post '/session', to: 'session#create'
+  delete '/logout', to: 'session#destroy'
+
+  post '/likes', to: 'likes#create'
 end
