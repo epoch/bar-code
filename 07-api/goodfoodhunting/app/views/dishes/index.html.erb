@@ -1,9 +1,9 @@
 <% @dishes.each do |dish| %>
-<div class="dish">
+<div class="dish" data-dish-id="<%= dish.id %>">
   <h2><%= dish.title %></h2>
   <%= form_tag '/likes', method: 'post' do %>
-    <input type="hidden" name="dish_id" value="<%= dish.id %>">
-    <button>like</button>
+    <input class="dish_id" type="hidden" name="dish_id" value="<%= dish.id %>">
+    <button data-dish-id="<%= dish.id %>">like</button>
   <% end %>
   <div class="count"><%= dish.likes.count %></div>
 </div>
@@ -16,13 +16,16 @@
   $('button').on('click', function(event) {
     event.preventDefault();
 
+    console.log('dish_id', $(event.target).closest('.dish').attr('data-dish-id'));
     // make a request to the server
     // console.log(event.target);
 
     var options = {
       url: '/likes',
       method: 'post',
-      data: { dish_id: 18 }
+      data: { 
+        dish_id: $(event.target).closest('.dish').find('.dish_id').val() 
+      }
     }
 
     var updateCount = function(response) {
