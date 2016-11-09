@@ -1,11 +1,47 @@
 <% @dishes.each do |dish| %>
-
-  <p><%= dish.title %></p>
-
+<div class="dish">
+  <h2><%= dish.title %></h2>
   <%= form_tag '/likes', method: 'post' do %>
     <input type="hidden" name="dish_id" value="<%= dish.id %>">
     <button>like</button>
   <% end %>
-  <%= dish.likes.count %>
-
+  <div class="count"><%= dish.likes.count %></div>
+</div>
 <% end %>
+
+
+<script>
+  
+  // clicking on any button
+  $('button').on('click', function(event) {
+    event.preventDefault();
+
+    // make a request to the server
+    // console.log(event.target);
+
+    var options = {
+      url: '/likes',
+      method: 'post',
+      data: { dish_id: 18 }
+    }
+
+    var updateCount = function(response) {
+      // from the target we need to traverse the dom to find
+      // the nearest div with the class count
+      // to use closest and find which are jquery functions
+      // i need to turn event.target from a simple dom elem
+      // to a jquery object
+      // look up for .dish
+      var $dish = $(event.target).closest('.dish');
+      // from $dish, look down for .count
+      var $count = $dish.find('.count');
+      // $count.text(  parseInt($count.text()) + 1 );
+      $count.text( response.like_count );
+    }
+
+    $.ajax(options).done(updateCount); // makes a request
+
+
+  });
+
+</script>

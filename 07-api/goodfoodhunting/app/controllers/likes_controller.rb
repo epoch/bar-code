@@ -5,6 +5,10 @@ class LikesController < ApplicationController
     like.dish_id = params[:dish_id]
     like.user_id = session[:user_id]
     like.save
-    redirect_to '/dishes'
+    sleep 6
+    render json: { 
+      like_count: Dish.find(like.dish_id).likes.count 
+    } 
+    # redirect_to '/dishes'
   end
 end
