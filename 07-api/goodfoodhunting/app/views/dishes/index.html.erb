@@ -1,7 +1,7 @@
 <div class="dish-list">
   
 <% @dishes.each do |dish| %>
-  <div class="ui-card">
+  <div class="ui-card" data-dish-id="<%= dish.id %>">
     <header class="content">
       <span class="right">14h</span>
       <img class="avatar" src="https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97800&w=800&h=800" alt=""> DT 
@@ -18,7 +18,7 @@
     </div>
 
     <div class="content">
-      <span class="right"><%= dish.likes.count %></span> by DT
+      <span class="right count"><%= dish.likes.count %></span> by DT
     </div>
   </div>
 <% end %>
@@ -28,10 +28,10 @@
 <script>
   
   // clicking on any button
-  $('button').on('click', function(event) {
+  $('.star').on('click', function(event) {
     event.preventDefault();
 
-    console.log('dish_id', $(event.target).closest('.dish').attr('data-dish-id'));
+    // console.log('dish_id', $(event.target).closest('.dish').attr('data-dish-id'));
     // make a request to the server
     // console.log(event.target);
 
@@ -39,7 +39,7 @@
       url: '/likes',
       method: 'post',
       data: { 
-        dish_id: $(event.target).closest('.dish').find('.dish_id').val() 
+        dish_id: $(event.target).closest('.ui-card').data('dish-id') 
         // dish_id: $(event.target).closest('.dish').attr('data-dish-id')
       }
     }
@@ -51,7 +51,7 @@
       // i need to turn event.target from a simple dom elem
       // to a jquery object
       // look up for .dish
-      var $dish = $(event.target).closest('.dish');
+      var $dish = $(event.target).closest('.ui-card');
       // from $dish, look down for .count
       var $count = $dish.find('.count');
       // $count.text(  parseInt($count.text()) + 1 );

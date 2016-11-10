@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'session#destroy'
 
   post '/likes', to: 'likes#create'
+
+
+  get '/api/dishes', to: 'api/dishes#index'
 end

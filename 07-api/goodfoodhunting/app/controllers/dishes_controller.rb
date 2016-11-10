@@ -2,6 +2,7 @@ class DishesController < ApplicationController
 
   def index
     @dishes = Dish.all
+    # render :index
   end
 
   def new
