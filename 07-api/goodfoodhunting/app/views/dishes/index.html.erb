@@ -1,14 +1,29 @@
+<div class="dish-list">
+  
 <% @dishes.each do |dish| %>
-<div class="dish" data-dish-id="<%= dish.id %>">
-  <h2><%= dish.title %></h2>
-  <%= form_tag '/likes', method: 'post' do %>
-    <input class="dish_id" type="hidden" name="dish_id" value="<%= dish.id %>">
-    <button data-dish-id="<%= dish.id %>">like</button>
-  <% end %>
-  <div class="count"><%= dish.likes.count %></div>
-</div>
+  <div class="ui-card">
+    <header class="content">
+      <span class="right">14h</span>
+      <img class="avatar" src="https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97800&w=800&h=800" alt=""> DT 
+    </header>
+
+    <div class="image">
+      <img src="https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97800&w=800&h=800" alt="">
+      <span class="star">&#9733;</span>
+    </div>
+
+    <div class="content">
+      <h2><%= dish.title %></h2>
+      <h4>at GA</h4>
+    </div>
+
+    <div class="content">
+      <span class="right"><%= dish.likes.count %></span> by DT
+    </div>
+  </div>
 <% end %>
 
+</div>
 
 <script>
   
@@ -25,6 +40,7 @@
       method: 'post',
       data: { 
         dish_id: $(event.target).closest('.dish').find('.dish_id').val() 
+        // dish_id: $(event.target).closest('.dish').attr('data-dish-id')
       }
     }
 
@@ -43,7 +59,6 @@
     }
 
     $.ajax(options).done(updateCount); // makes a request
-
 
   });
 
