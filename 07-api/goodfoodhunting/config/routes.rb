@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 
 
   get '/api/dishes', to: 'api/dishes#index'
+  post '/api/likes', to: 'api/likes#create'
 end
