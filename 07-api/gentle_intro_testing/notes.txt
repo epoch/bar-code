@@ -1,0 +1,57 @@
+random brain dumplings
+
+is 2016 a leap year???
+
+yes
+
+is 2017 a leap year??? no may be
+is 2018 a leap year??? no may be
+is 1900 a leap year??? no
+
+problem!!!!!
+
+is ____ a leap year??? yes or no
+
+write a program!!!
+design a program!!!
+design it like black box!!!
+design it to be composable
+design it to be simple to use!!!
+
+how do know its working???? 
+manually - that sucks!!!!!!!!
+take there jobs away - automatic testing with code
+
+first reason to test - to PROVE your code does what you think it does
+
+test cases
+===========
+
+2016 yes
+2017 no
+2018 no
+2019 no
+2000 yes
+1900 no
+
+reporting
+=========
+passing each test with a tick!!!
+
+
+testing frameworks
+=================
+
+testing itself the concept should be super simple
+
+pick a simple framework to start with
+
+help us to write test cases, run test cases and show reports
+
+second reason - helps you design your code
+
+
+
+
+
+
