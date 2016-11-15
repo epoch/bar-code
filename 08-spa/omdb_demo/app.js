@@ -7,11 +7,10 @@ $.ajax({
 
   _.each(movies, function(movie) {
 
-    var source = $('#movie-template').html();
+    // var source = $('#movie-template').html();
+    // var template = Handlebars.compile(source);
 
-    var template = Handlebars.compile(source);
-
-    var html = template({ 
+    var html = Handlebars.templates.movie({ 
       title: movie.Title,
       year: movie.Year 
     });
