@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <input type="text"><button>search</button>
+
+  <div id="list">
+  </div>
+
+  <!--div id="list">
+    <div class="movie">jaws</div>
+    <div class="movie">jaws 2</div>
+    <div class="movie">jaws 3</div>
+  </div-->
+
+  <script id="movie-template" type="text/x-handlebars-template">
+    <div class="movie">
+      <h2>{{ title }}</h2>
+      <p>{{ year }}</p>
+    </div>
+  </script>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script src="http://underscorejs.org/underscore-min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
