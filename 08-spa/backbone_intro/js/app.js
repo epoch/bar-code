@@ -14,10 +14,27 @@ var dishes = [{
 
 var ListItemView = Backbone.View.extend({
 
+  tagName: 'p',
+
+  events: {
+    'click': 'showDetails'
+  },
+
   render: function() {
-    this.$el.html('<div>some dish name</div>');
+    this.$el.html('<h2>'+ this.model.name +'</h2>');
+  },
+
+  showDetails: function() {
+    console.log('show me the cake');
   }
 
 });
 
-var view = new ListItemView();
+_.each(dishes, function(dish) {
+
+  var view = new ListItemView({ model: dish });
+  view.render();
+  $('#list').append(view.el);
+
+});
+
