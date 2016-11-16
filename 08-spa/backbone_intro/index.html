@@ -3,16 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <style>
+    
+    .clicked {
+      background-color: mistyrose;
+    }
+  </style>
 </head>
 <body>
 
   <div id="list">
     
   </div>
+
+  <script id="item-template" type="text/x-handlebars-template">
+    <h2>{{ name }}</h2>
+    <hr>    
+    <p>{{ desc }}</p>
+  </script>
   
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script src="http://underscorejs.org/underscore-min.js"></script>
   <script src="js/backbone.js"></script>
+  <script src="views/ListItemView.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
