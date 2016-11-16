@@ -1,8 +1,5 @@
 console.log('ready to roll');
 
-var Dish = Backbone.Model.extend({
-});
-
 var dishes = [new Dish({
   id: 1,
   name: 'only puke',
