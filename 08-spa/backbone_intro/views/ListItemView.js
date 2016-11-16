@@ -6,19 +6,24 @@ var ListItemView = Backbone.View.extend({
     'click h2': 'showDetails'
   },
 
+  template: Handlebars.compile($('#item-template').html()),
+
   initialize: function() {
-    this.listenTo(this.model, 'change', this.render);
+    // listen to change event on model
+    // when the model change call this.render
+    this.listenTo(this.model, 'change:name', this.render);
   },
 
   render: function() {
-    var source = $('#item-template').html();
-    var template = Handlebars.compile(source);
+    // var source = $('#item-template').html();
+    // var template = Handlebars.compile(source);
+
     // var html = template({
     //   name: this.model.get('name'),
     //   desc: this.model.get('desc')
     // });
 
-    var html = template(this.model.toJSON());
+    var html = this.template(this.model.toJSON());
     this.$el.html(html);
   },
 
