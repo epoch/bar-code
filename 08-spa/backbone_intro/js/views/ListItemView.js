@@ -25,6 +25,8 @@ var ListItemView = Backbone.View.extend({
 
     var html = this.template(this.model.toJSON());
     this.$el.html(html);
+
+    return this;
   },
 
   showDetails: function() {
