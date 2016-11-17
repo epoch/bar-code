@@ -20,11 +20,18 @@ var dishes = new Dishes([{
   long: 144.963371
 }])
 
-dishes.each(function(dish) {
-
-  var view = new ListItemView({ model: dish });
-  // view.render();
-  $('#list').append(view.render().el);
-
+var view = new ListView({ 
+  collection: dishes 
 });
+
+$('#root').html(view.render().el);
+
+
+// dishes.each(function(dish) {
+
+//   var view = new ListItemView({ model: dish });
+//   // view.render();
+//   $('#list').append(view.render().el);
+
+// });
 
