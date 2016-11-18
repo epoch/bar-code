@@ -8,12 +8,19 @@
     .clicked {
       background-color: mistyrose;
     }
+
+    #map {
+      height: 200px;
+    }
   </style>
 </head>
 <body>
 
   <div id="root">
-    
+  
+    <div id="map">
+      
+    </div>
   </div>
 
   <script id="item-template" type="text/x-handlebars-template">
@@ -22,6 +29,8 @@
     <hr>    
   </script>
   
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhqZRwt_FwYVP5agBShhqVJ7dgHY7WI-k"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script src="http://underscorejs.org/underscore-min.js"></script>

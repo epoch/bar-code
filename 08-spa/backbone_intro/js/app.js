@@ -5,7 +5,11 @@ var dishes = new Dishes([{
   name: 'creamy white finishing sauce',
   desc: 'nuts',
   lat: -37.815450, 
-  long: 144.967491
+  long: 144.967491,
+  comments: [{
+    name: 'dt',
+    body: 'hmmmmm'
+  }]
 },{
   id: 2,
   name: 'pet sweat',
@@ -24,7 +28,12 @@ var view = new ListView({
   collection: dishes 
 });
 
-$('#root').html(view.render().el);
+$('#root').prepend(view.render().el);
+
+new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -34.397, lng: 150.644},
+  zoom: 8
+});
 
 
 // dishes.each(function(dish) {

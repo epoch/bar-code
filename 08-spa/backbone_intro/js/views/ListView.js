@@ -2,6 +2,9 @@
 
 var ListView = Backbone.View.extend({
 
+  tagName: 'div',
+  className: 'list',
+
   render: function() {
     console.log(this.collection)
 
