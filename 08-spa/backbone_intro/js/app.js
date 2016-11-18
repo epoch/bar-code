@@ -9,13 +9,15 @@ var dishes = new Dishes([{
   comments: [{
     name: 'dt',
     body: 'hmmmmm'
-  }]
+  }],
+  selected: false
 },{
   id: 2,
   name: 'pet sweat',
   desc: 'sauce',
   lat: -37.815569, 
-  long: 144.970946
+  long: 144.970946,
+  selected: true
 },{
   id: 3,
   name: 'child shredded meat',

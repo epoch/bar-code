@@ -11,7 +11,7 @@ var ListItemView = Backbone.View.extend({
   initialize: function() {
     // listen to change event on model
     // when the model change call this.render
-    this.listenTo(this.model, 'change:name', this.render);
+    this.listenTo(this.model, 'change', this.render);
   },
 
   render: function() {
@@ -25,13 +25,17 @@ var ListItemView = Backbone.View.extend({
 
     var html = this.template(this.model.toJSON());
     this.$el.html(html);
+    if (this.model.get('selected')) {
+      this.$el.addClass('clicked');
+    }
 
     return this;
   },
 
   showDetails: function() {
-    this.$el.addClass('clicked');
-    console.log('show me the id number ' + this.model.get('id'));
+    // this.$el.addClass('clicked');
+
+    this.model.set('selected', true);
   }
 
 });
