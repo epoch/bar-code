@@ -3,6 +3,7 @@
 
   var posterUrl;
   var numOfPixels = 2000;
+  var $movieInput = $('#movie-input');
 
   $('#movie-input').on('keyup', function(event) {
 
@@ -10,7 +11,7 @@
 
       $.ajax({
         url: 'http://www.omdbapi.com',
-        data: { t: $('#movie-input').val() },
+        data: { t: $movieInput.val() },
         dataType: 'json', // default
         method: 'get' // default
       }).done(function(res) {
