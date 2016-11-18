@@ -5,21 +5,46 @@
   <title>Document</title>
   <style>
     
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
     .clicked {
       background-color: mistyrose;
     }
 
-    #map {
+    #root {
+    }
+
+    #map-container {
+      display: inline-block;
+      vertical-align: top;
       height: 200px;
+      width: 50%;
+    }
+
+    #map {
+      height: 100vh;
+    }
+
+    .list {
+      display: inline-block;
+      vertical-align: top;
+      overflow: scroll;
+      width: 48%;
+      height: 100vh;
     }
   </style>
 </head>
 <body>
 
   <div id="root">
-  
-    <div id="map">
-      
+    
+    <div id="map-container">
+      <div id="map">
+        
+      </div>
     </div>
   </div>
 

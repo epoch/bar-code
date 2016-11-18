@@ -22,6 +22,30 @@ var dishes = new Dishes([{
   desc: 'beef floss',
   lat: -37.813662,
   long: 144.963371
+},{
+  id: 4,
+  name: 'child shredded meat',
+  desc: 'beef floss',
+  lat: -37.813662,
+  long: 144.963371
+},{
+  id: 5,
+  name: 'child shredded meat',
+  desc: 'beef floss',
+  lat: -37.813662,
+  long: 144.963371
+},{
+  id: 6,
+  name: 'child shredded meat',
+  desc: 'beef floss',
+  lat: -37.813662,
+  long: 144.963371
+},{
+  id: 7,
+  name: 'child shredded meat',
+  desc: 'beef floss',
+  lat: -37.813662,
+  long: 144.963371
 }])
 
 var view = new ListView({ 
@@ -30,10 +54,20 @@ var view = new ListView({
 
 $('#root').prepend(view.render().el);
 
-new google.maps.Map(document.getElementById('map'), {
-  center: {lat: -34.397, lng: 150.644},
-  zoom: 8
+var map = new google.maps.Map(document.getElementById('map'), {
+  center: { lat: -37.813662, lng: 144.963371 },
+  zoom: 14
 });
+
+dishes.each(function(dish) {
+
+  var marker = new google.maps.Marker({
+    position: {lat: dish.get('lat'), lng: dish.get('long')},
+    map: map
+  });
+
+})
+
 
 
 // dishes.each(function(dish) {
