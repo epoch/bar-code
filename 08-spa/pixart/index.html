@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #brush-div {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      background-size: cover;
+    }
+
+    #canvas-div {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      background-color: mistyrose;
+    }
+
+    #canvas-div > div {
+      width: 20px;
+      height: 20px;
+      border: 1px solid black;
+      background-size: cover;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  
+  <input id="movie-input" type="text">
+  <button id="pick-btn">pick</button>
+  <div id="brush-div"></div>
+
+  <div id="canvas-div">
+    
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
