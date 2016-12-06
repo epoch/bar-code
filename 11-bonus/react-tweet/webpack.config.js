@@ -1,15 +1,18 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['webpack-hot-middleware/client','./src/index.js'],
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['react-hot','babel'],
       include: __dirname + '/src'
     }, {
       test: /\.s?css$/,

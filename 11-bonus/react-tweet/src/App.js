@@ -3,12 +3,17 @@ var TweetBox = require('./TweetBox');
 
 var App = React.createClass({
 
+  getInitialState: function() {
+    return { numbers: [10,20,30,40] }
+  },
+
   render: function() {
     return (
       <div>
-        <h1>welcome to tweet</h1>
-        <TweetBox maxTweetLength={30} />
-        <TweetBox maxTweetLength={50} />
+        <h1>hotness</h1>
+        {this.state.numbers.map(function(elem, index) {
+          return <TweetBox key={index} maxTweetLength={50} />
+        })}
       </div>
     )
   }
